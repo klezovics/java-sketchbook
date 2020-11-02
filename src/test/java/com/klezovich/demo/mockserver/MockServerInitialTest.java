@@ -1,7 +1,7 @@
 package com.klezovich.demo.mockserver;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.BeforeClass;
+import org.junit.Test;
 import org.mockserver.client.server.MockServerClient;
 import org.mockserver.integration.ClientAndServer;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -13,14 +13,14 @@ import static org.mockserver.integration.ClientAndServer.startClientAndServer;
 import static org.mockserver.model.HttpRequest.request;
 import static org.mockserver.model.HttpResponse.response;
 
-class MockServerInitialTest {
+public class MockServerInitialTest {
 
     private static Integer MOCK_SERVER_PORT = 1080;
     private static ClientAndServer mockServer;
 
     private RestTemplate restTemplate = getRestTemplate();
 
-    @BeforeAll
+    @BeforeClass
     public static void startServer() {
         mockServer = startClientAndServer(MOCK_SERVER_PORT);
     }
