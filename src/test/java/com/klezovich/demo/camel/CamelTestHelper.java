@@ -4,17 +4,17 @@ import org.apache.camel.component.mock.MockEndpoint;
 
 import java.util.Map;
 
-public class СamelTestHelper {
+public class CamelTestHelper {
 
-    static private Map getFirstMessageHeaders(MockEndpoint endpoint) {
+    public static Map getFirstMessageHeaders(MockEndpoint endpoint) {
         return getNthMessageHeaders(endpoint, 0);
     }
 
-    static String getFirstMessageBody(MockEndpoint endpoint) {
+    public static String getFirstMessageBody(MockEndpoint endpoint) {
         return getNthMessageBody(endpoint, 0);
     }
 
-    static Map getNthMessageHeaders(MockEndpoint endpoint, int index) {
+    public static Map getNthMessageHeaders(MockEndpoint endpoint, int index) {
         return endpoint
             .getReceivedExchanges()
             .get(index)
@@ -22,7 +22,7 @@ public class СamelTestHelper {
             .getHeaders();
     }
 
-    static String getNthMessageBody(MockEndpoint endpoint, int index) {
+    public static String getNthMessageBody(MockEndpoint endpoint, int index) {
         return endpoint
             .getReceivedExchanges()
             .get(index)
