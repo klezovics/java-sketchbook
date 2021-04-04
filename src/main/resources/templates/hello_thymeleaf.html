@@ -1,0 +1,15 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<h1 th:text="'Hello, ' + ${model.username}">Hello, user</h1>
+Age is : <span th:text="${model.age}">18</span>
+
+<p>Favourite drinks</p>
+<ul>
+    <li th:each="drink : ${model.drinks}" th:text="${drink}">Water</li>
+</ul>
+
+<p th:if="${model.drinks.contains('Fanta')}">You are a fanta lover!</p>
+</body>
+</html>
